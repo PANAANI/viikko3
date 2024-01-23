@@ -8,11 +8,11 @@ public class App
         System.out.println("Anna eläintarhalle nimi:");
         String new_zoo_name = sc.nextLine();
         Zoo zoo = new Zoo(new_zoo_name);
-        String choice = "";
-        while (choice.equals("0") == false) {
+        boolean exit = false;
+        while (exit == false) {
             System.out.println("1) Luo uusi eläin, 2) Listaa kaikki eläimet, 3) Juoksuta eläimiä, 0) Lopeta ohjelma");
             if (sc.hasNext()) {
-                choice = sc.nextLine();
+                String choice = sc.nextLine();
                 switch (choice) {
                     case "1":
                         System.out.println("Mikä laji?");
@@ -20,7 +20,7 @@ public class App
                         System.out.println("Anna eläimen nimi:");
                         String new_name = sc.nextLine();
                         System.out.println("Anna eläimen ikä:");
-                        int new_age = sc.nextInt();
+                        int new_age = Integer.parseInt(sc.nextLine());
                         Animal new_animal = new Animal(new_species, new_name, new_age);
                         zoo.addAnimal(new_animal);
                         break;
@@ -34,6 +34,7 @@ public class App
                         break;
                     case "0":
                         //System.out.println("lopetetaan.");
+                        exit = true;
                         break;
                     default:
                         System.out.println("Syöte oli väärä");
@@ -41,6 +42,7 @@ public class App
                 }
             }            
         }
+        sc.close();
         System.out.println("Kiitos ohjelman käytöstä.");
     } 
 }
