@@ -33,10 +33,10 @@ public class App
                         zoo.runAnimals(iterations);
                         break;
                     case "0":
-                        System.out.println("Lopetetaan.");
+                        //System.out.println("lopetetaan.");
                         break;
                     default:
-                        System.out.println("Tuntematon valinta, yritä uudestaan.");
+                        System.out.println("Syöte oli väärä");
                         break;
                 }
             }            
