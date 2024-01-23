@@ -29,7 +29,7 @@ public class App
                         break;
                     case "3":
                         System.out.println("Kuinka monta kierrosta?");
-                        int iterations = sc.nextInt();      
+                        int iterations = Integer.parseInt(sc.nextLine());      
                         zoo.runAnimals(iterations);
                         break;
                     case "0":
